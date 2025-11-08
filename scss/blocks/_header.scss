@@ -1,0 +1,295 @@
+.header {
+  $root: &;
+  padding: 20px 0 19px;
+  border-bottom: 1px solid $color-gainsboro;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: $color-white;
+  z-index: 10;
+  $root: &;
+
+  @include vp-1023 {
+    padding: 17px 0 16px;
+  }
+
+  &--open {
+
+    background-color: $color-blue-charcoa;
+    border: 1px solid $color-deepest-sea;
+
+    @include vp-1023 {
+      padding: 14px 0;
+    }
+
+
+    #{$root}__menu {
+      width: 40px;
+      height: 40px;
+      margin: 0 90px 0 0;
+
+      @include vp-1023 {
+        width: 32px;
+        height: 32px;
+        margin: 0 85px 0 0;
+      }
+    }
+
+    #{$root}__menu-icon {
+      display: none;
+      color: $color-white;
+
+      &--close {
+        display: flex;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    #{$root}__logo-link {
+      color: $color-white;
+
+      @include vp-1023 {
+        svg {
+          width: 105px;
+          height: 24px;
+        }
+      }
+
+      @include vp-767 {
+        width: 88px;
+        height: 20px;
+      }
+    }
+
+    
+    #{$root}__link {
+      color: $color-white;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-ecru-white;
+        text-decoration: none;
+      }
+    }
+
+    #{$root}__page {
+      color: $color-white;
+    }
+
+    #{$root}__content {
+      padding: 0;
+    }
+
+    #{$root}__phone-text {
+      color: $color-white;
+    }
+
+    @include vp-1023 {
+      #{$root}__phone-icon {
+        color: $color-white;
+      }
+    }
+
+    .main-nav {
+      display: block;
+
+      &__list {
+        @include vp-1023 {
+          gap: 35px;
+        }
+
+        @include vp-767 {
+          gap: 20px;
+        }
+      }
+
+      &__link {
+
+        @include vp-1023 {
+          font-size: 20px;
+          line-height: 24px;
+        }
+
+        @include vp-767 {
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        &--secondary {
+          @include vp-1023 {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 1728px;
+    padding: 0 50px;
+
+    @include vp-1023 {
+      padding: 0 20px;
+    }
+  }
+
+
+  &__content {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+
+    @include vp-1023 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include vp-767 {
+      padding-right: 10px;
+    }
+  }
+
+  &__left-col {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    width: 60px;
+    height: 40px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    color: $color-blue-charcoa;
+    align-items: center;
+    justify-content: center;
+    margin: 0 70px 0 0;
+
+    @include vp-1023 {
+      width: 47px;
+      height: 20px;
+    }
+
+    @include vp-767 {
+      margin: 0 70px 0 0;
+    }
+  }
+
+  &__menu-icon {
+    height: 23px;
+    width: 60px;
+
+    @include vp-1023 {
+      height: 18px;
+      width: 47px;
+    }
+  }
+
+  &__logo-link {
+    height: 26px;
+    width: 114px;
+    display: flex;
+    color: $color-blue-charcoa;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+
+    @include vp-1023 {
+      height: 24px;
+      width: 105px;
+    }
+
+    @include vp-767 {
+      height: 20px;
+      width: 88px;
+
+      svg {
+        height: 20px;
+        width: 88px;
+      }
+    }
+  }
+
+  &__page {
+    font-size: 18px;
+    line-height: 26px;
+    display: block;
+
+    @media (max-width: 1199px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__right-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    font-size: 18px;
+    line-height: 22px;
+
+    @media (max-width: 1199px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include vp-1023 {
+      gap: 20px;
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    @include vp-767 {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  &__phone-text {
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__phone-icon {
+    height: 24px;
+    width: 24px;
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+    }
+  }
+
+  &__menu-icon--close {
+    display: none;
+  }
+}

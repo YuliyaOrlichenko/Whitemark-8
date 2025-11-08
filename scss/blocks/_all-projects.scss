@@ -1,0 +1,122 @@
+.all-projects {
+    padding: 46px 0 0;
+    margin: 0;
+
+    @include vp-1023 {
+        padding: 20px 0 0;
+        margin: 0 0 20px;
+    }
+
+    @include vp-767 {
+        padding: 19px 0 0;
+        margin: 0 0 20px;
+    }
+
+    &__top {
+        @include vp-1023 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include vp-767 {
+            padding-right: 6px;
+        }
+    }
+
+    &__image {
+        @include vp-767 {
+            max-width: 767px;
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        gap: 26px 10px;
+        flex-wrap: wrap;
+
+        li:first-child {
+            display: none;
+        }
+
+        @media(max-width: 1300px) {
+            li:nth-child(17) {
+                display: none;
+            }
+
+            li:nth-child(16) {
+                display: none;
+            }
+        }
+
+        @media(max-width: 1115px) {
+            li:nth-child(15) {
+                display: none;
+            }
+            li:nth-child(14) {
+                display: none;
+            }
+
+            li:nth-child(13) {
+                display: none;
+            }
+        }
+
+        @include vp-1023 {
+            li:not(:first-child) {
+                display: none;
+            }
+
+            li:first-child {
+                display: block;
+            }
+
+            margin: 0;
+            padding: 0;
+        }
+
+        @include vp-767 {
+            li:not(:first-child) {
+                display: none;
+            }
+
+            li:first-child {
+                display: block;
+            }
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 8px 16px;
+        border-radius: 60px;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $color-chrome-white;
+            color: $color-blue-charcoa;
+        }
+
+        &--true {
+            color: $color-white;
+            background-color: $color-blue-charcoa;
+        }
+
+        &--false {
+            color: $color-blue-charcoa;
+            background-color: $color-ecru-white;
+        }
+
+        @include vp-767 {
+            font-size: 12px;
+            line-height: 16px;
+            padding: 8px 16px;
+        }
+    }
+}
